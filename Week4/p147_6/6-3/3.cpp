@@ -1,10 +1,10 @@
+//p147_6번 3. 구구단, 곱셈, 덧셈 게임 선택 프로그램 생성.
 #include "3.h"
 void gugudan(){
     int number,result,count=0;
     std::cout<<"구구단 몇 단을 입력하시겠습니까?: ";
     std::cin>>number;
     for(int i=1;i<10;i++){
-        std::cout << std::endl;
         std::cout << number << " x " << i << " = ";
         std::cin >> result;
         if(result == number*i){
@@ -33,7 +33,16 @@ void multiplication(){
 }
 bool a_step(){  
     int result;
-    int a=rand() %999 +100; int b=rand()%999 +100; 
+
+    //시드 설정 및 엔진 준비
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    std::uniform_int_distribution<int> dis(100, 999999999);  //std::uniform_int_distribution<int>      정수 형태의 균등 분포 필터를 만들겠다는 의미.
+
+    int a = dis(gen); //gen=진짜 무작위의 수, dis(min,max)= 설정해놓은 100~9억 사이의 숫자들만 할 수 있게 일종의 필터.
+    int b = dis(gen);
+
     std::cout << a << " + " << b << " = ";
     std::cin >> result;
     return (result==(a+b)); 
