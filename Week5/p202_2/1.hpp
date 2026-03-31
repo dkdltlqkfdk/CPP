@@ -1,4 +1,4 @@
-#include<iostream>
+#include<cstdio>
 #include<cstdlib>
 #include<ctime>
 void randomMap(int map[5][5]);
