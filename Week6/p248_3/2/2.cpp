@@ -1,7 +1,17 @@
 #include "1.hpp"
 
 void addTime(MyTime t1, MyTime t2, MyTime& t3){
+    int i=(t1.m+t2.m)/60;
 
+    if((t1.m+t2.m)>=60){
+        
+        t3.h=t1.h+t2.h+i;
+        t3.m=(t1.m+t2.m)-(60*i);
+    }
+    else{
+        t3.h=t1.h+t2.h;
+        t3.m=(t1.m+t2.m);
+    }
 }
 
 int main(){
@@ -19,8 +29,8 @@ int main(){
     std::cout<<"m: ";
     std::cin>>t2.m;
 
-    result=addtime(t1,t2);
     std::cout<<"\n----------------------------\n(add) ";
+    addTime(t1,t2,result);
     std::cout<< result.h<<"h "<< result.m<<"m\n"<<std::endl;
     return 0;
 }
