@@ -2,7 +2,7 @@
 #include "1.hpp"
 
 
-MyTime addtime(MyTime t1,MyTime t2){
+MyTime addTime(MyTime t1,MyTime t2){
     MyTime result;
     int i=(t1.minute+t2.minute)/60;
     if((t1.minute+t2.minute)>=60){
@@ -32,7 +32,7 @@ int main(){
     std::cout<<"m: ";
     std::cin>>t2.minute;
 
-    result=addtime(t1,t2);
+    result=addTime(t1,t2);
     std::cout<<"\n----------------------------\n(add) ";
     std::cout<< result.hour<<"h "<< result.minute<<"m\n"<<std::endl;
     return 0;
