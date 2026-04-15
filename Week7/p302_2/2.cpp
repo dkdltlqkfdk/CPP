@@ -54,6 +54,7 @@ int main(){
     mydic.print();
     std::cout << "총 " << MAXWORDS << "개의 단어를 입력받습니다." << std::endl;
     while (true) {
+        std::cout<<"\n\n";
         std::cout << "영어 단어: ";
         std::cin >> e;
 
