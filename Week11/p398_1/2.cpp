@@ -1,6 +1,6 @@
 #include "1.hpp"
 
-int Sample::count=0;
+int Sample::count=0; //클래스 정적 멤버 변수: 클래스에 소속된 객체들이 공유하는 변수. <-> 일반 멤버 변수: 객체에 소속된 변수.
 
 Sample::Sample(const char* name){ //(2)
     int i=0;
